@@ -1,5 +1,6 @@
-import { connect } from 'react-redux'
+import { connectWithReducer } from 'redux-next'
 import { toggleTodo } from '../actions'
+import { default as todosReducer } from '../reducers/todos'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
@@ -23,7 +24,8 @@ const mapDispatchToProps = {
   onTodoClick: toggleTodo
 }
 
-const VisibleTodoList = connect(
+const VisibleTodoList = connectWithReducer(
+  todosReducer,
   mapStateToProps,
   mapDispatchToProps
 )(TodoList)

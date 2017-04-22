@@ -7,4 +7,6 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
   }
 }
 
+visibilityFilter.key = 'visibilityFilter'
+
 export default visibilityFilter

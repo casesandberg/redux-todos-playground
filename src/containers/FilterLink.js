@@ -1,5 +1,6 @@
-import { connect } from 'react-redux'
+import { connectWithReducer } from 'redux-next'
 import { setVisibilityFilter } from '../actions'
+import { default as visibilityFilterReducer } from '../reducers/visibilityFilter'
 import Link from '../components/Link'
 
 const mapStateToProps = (state, ownProps) => ({
@@ -12,7 +13,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   }
 })
 
-const FilterLink = connect(
+const FilterLink = connectWithReducer(
+  visibilityFilterReducer,
   mapStateToProps,
   mapDispatchToProps
 )(Link)

@@ -36,4 +36,6 @@ const todos = (state = [], action) => {
   }
 }
 
+todos.key = 'todos'
+
 export default todos
